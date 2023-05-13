@@ -17,7 +17,7 @@ void solve(){
   int j=1;
   int x=n/2;
   while(x--){
-    cout<<i<<" "<<j;
+    cout<<i<<" "<<j<<" ";
     i+=2;
     j+=2;
   }

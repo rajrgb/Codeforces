@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* clang-format off */
-
-/* TYPES  */
 #define ll long long
 #define pii pair<int, int>
 #define pll pair<long long, long long>
@@ -34,8 +31,8 @@ ll lcm(ll a,ll b) { return a/gcd(a,b)*b; }
 string to_upper(string a) { for (int i=0;i<(int)a.size();++i) if (a[i]>='a' && a[i]<='z') a[i]-='a'-'A'; return a; }
 string to_lower(string a) { for (int i=0;i<(int)a.size();++i) if (a[i]>='A' && a[i]<='Z') a[i]+='a'-'A'; return a; }
 bool prime(ll a) { if (a==1) return 0; for (int i=2;i<=round(sqrt(a));++i) if (a%i==0) return 0; return 1; }
-void yes() { cout<<"YES\n"; }
-void no() { cout<<"NO\n"; }
+void yes() { cout<<"YES"; }
+void no() { cout<<"NO"; }
 
 typedef long int int32;
 typedef unsigned long int uint32;
@@ -48,15 +45,26 @@ int main()
     cin.tie(0); cout.tie(0);
 
 	int tc;
-    tc=1;
+	cin>>tc;
 
 	while(tc--){
 		//code
-				string str;
-				cin>>str;
-				cout<<"in test1"<<"\n";
-				cout<<string(str.size(), str[0]);
-                cout<<"\n";
+        string str;
+        cin>>str;
+        int i;
+        int arr[26]={};
+        f(i,0,str.size())
+        arr[str[i]-'a']++;
+        int counto=0, counte=0;
+        int x;
+        f(i,0,26) 
+        if(arr[i]%2) { counto++; x=arr[i];}
+        else if(arr[i]) counte++;
+        if((counto<=1&&counte>1)||(counte==1&&counto==1&&x>1))
+        yes();
+        else 
+        no();
+        cout<<"\n";
 	}
 	return 0;
 }

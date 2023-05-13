@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* clang-format off */
-
-/* TYPES  */
 #define ll long long
 #define pii pair<int, int>
 #define pll pair<long long, long long>
@@ -48,15 +45,19 @@ int main()
     cin.tie(0); cout.tie(0);
 
 	int tc;
-    tc=1;
+	cin>>tc;
 
 	while(tc--){
 		//code
-				string str;
-				cin>>str;
-				cout<<"in test1"<<"\n";
-				cout<<string(str.size(), str[0]);
-                cout<<"\n";
+        int n,k; cin>>n>>k;
+        int arr[n]={};
+        f(i,0,n) cin>>arr[i];
+        sort(arr,arr+n);
+        int i=0; j=n-1;
+        while(k--){
+            if(arr[i]+arr[i+1]>arr[j])
+        }
+        cout<<"\n";
 	}
 	return 0;
 }
